@@ -1,6 +1,6 @@
 /* Filled automatically by .github/workflows/update-feed.yml. Do not edit by hand. */
 window.CODESEED_FEED = {
- "updated": "2026-11-05T11:05:44.295Z",
+ "updated": "2026-11-05T20:02:41.329Z",
  "videos": [
   {
    "id": "0iLeQgV40CA",
@@ -13,7 +13,7 @@ window.CODESEED_FEED = {
    "id": "NpQa3hTYs6A",
    "title": "Vibe Coding Is Fast. Leaked API Keys Are Expensive. | Code Seed",
    "published": "2026-11-01T14:55:43+00:00",
-   "views": 48,
+   "views": 49,
    "thumb": "https://i.ytimg.com/vi/NpQa3hTYs6A/hqdefault.jpg"
   }
  ],
@@ -22,14 +22,14 @@ window.CODESEED_FEED = {
    "id": "gF3_-xeEJgo",
    "title": "Synchronous vs Asynchronous: Most People Get This Wrong #shorts",
    "published": "2026-11-03T14:21:03+00:00",
-   "views": 63,
+   "views": 67,
    "thumb": "https://i.ytimg.com/vi/gF3_-xeEJgo/hqdefault.jpg"
   },
   {
    "id": "ht-p61YuOJo",
    "title": "What is Client? What is Server? Frontend? Backend?  || Code Seed 💻",
    "published": "2026-11-02T23:55:22+00:00",
-   "views": 105,
+   "views": 107,
    "thumb": "https://i.ytimg.com/vi/ht-p61YuOJo/hqdefault.jpg"
   },
   {
