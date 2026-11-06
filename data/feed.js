@@ -1,12 +1,12 @@
 /* Filled automatically by .github/workflows/update-feed.yml. Do not edit by hand. */
 window.CODESEED_FEED = {
- "updated": "2026-11-06T11:02:13.116Z",
+ "updated": "2026-11-06T19:29:08.192Z",
  "videos": [
   {
    "id": "0iLeQgV40CA",
    "title": "Synchronous vs Asynchronous Transmission Explained: Bit Rate, Clock Signal & Framing | Code Seed",
    "published": "2026-11-03T14:15:56+00:00",
-   "views": 17,
+   "views": 18,
    "thumb": "https://i.ytimg.com/vi/0iLeQgV40CA/hqdefault.jpg"
   },
   {
@@ -29,7 +29,7 @@ window.CODESEED_FEED = {
    "id": "ht-p61YuOJo",
    "title": "What is Client? What is Server? Frontend? Backend?  || Code Seed 💻",
    "published": "2026-11-02T23:55:22+00:00",
-   "views": 110,
+   "views": 111,
    "thumb": "https://i.ytimg.com/vi/ht-p61YuOJo/hqdefault.jpg"
   },
   {
