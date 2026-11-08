@@ -1,6 +1,6 @@
 /* Filled automatically by .github/workflows/update-feed.yml. Do not edit by hand. */
 window.CODESEED_FEED = {
- "updated": "2026-11-08T13:36:41.940Z",
+ "updated": "2026-11-08T19:44:23.268Z",
  "videos": [
   {
    "id": "0iLeQgV40CA",
@@ -22,7 +22,7 @@ window.CODESEED_FEED = {
    "id": "gF3_-xeEJgo",
    "title": "Synchronous vs Asynchronous: Most People Get This Wrong #shorts",
    "published": "2026-11-03T14:21:03+00:00",
-   "views": 71,
+   "views": 72,
    "thumb": "https://i.ytimg.com/vi/gF3_-xeEJgo/hqdefault.jpg"
   },
   {
@@ -36,7 +36,7 @@ window.CODESEED_FEED = {
    "id": "Z1EKH6erPB4",
    "title": "Vibe coded in 10 minutes. Then a $1,000 API bill || Code Seed 💻",
    "published": "2026-11-01T14:53:25+00:00",
-   "views": 435,
+   "views": 436,
    "thumb": "https://i.ytimg.com/vi/Z1EKH6erPB4/hqdefault.jpg"
   }
  ],
