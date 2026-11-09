@@ -1,12 +1,12 @@
 /* Filled automatically by .github/workflows/update-feed.yml. Do not edit by hand. */
 window.CODESEED_FEED = {
- "updated": "2026-11-09T11:44:45.640Z",
+ "updated": "2026-11-09T22:28:13.565Z",
  "videos": [
   {
    "id": "0iLeQgV40CA",
    "title": "Synchronous vs Asynchronous Transmission Explained: Bit Rate, Clock Signal & Framing | Code Seed",
    "published": "2026-11-03T14:15:56+00:00",
-   "views": 17,
+   "views": 18,
    "thumb": "https://i.ytimg.com/vi/0iLeQgV40CA/hqdefault.jpg"
   },
   {
@@ -22,7 +22,7 @@ window.CODESEED_FEED = {
    "id": "gF3_-xeEJgo",
    "title": "Synchronous vs Asynchronous: Most People Get This Wrong #shorts",
    "published": "2026-11-03T14:21:03+00:00",
-   "views": 73,
+   "views": 74,
    "thumb": "https://i.ytimg.com/vi/gF3_-xeEJgo/hqdefault.jpg"
   },
   {
