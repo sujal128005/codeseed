@@ -1,6 +1,6 @@
 /* Filled automatically by .github/workflows/update-feed.yml. Do not edit by hand. */
 window.CODESEED_FEED = {
- "updated": "2026-11-11T17:14:26.646Z",
+ "updated": "2026-11-12T11:26:15.472Z",
  "videos": [
   {
    "id": "0iLeQgV40CA",
@@ -22,14 +22,14 @@ window.CODESEED_FEED = {
    "id": "gF3_-xeEJgo",
    "title": "Synchronous vs Asynchronous: Most People Get This Wrong #shorts",
    "published": "2026-11-03T14:21:03+00:00",
-   "views": 75,
+   "views": 76,
    "thumb": "https://i.ytimg.com/vi/gF3_-xeEJgo/hqdefault.jpg"
   },
   {
    "id": "ht-p61YuOJo",
    "title": "What is Client? What is Server? Frontend? Backend?  || Code Seed 💻",
    "published": "2026-11-02T23:55:22+00:00",
-   "views": 113,
+   "views": 117,
    "thumb": "https://i.ytimg.com/vi/ht-p61YuOJo/hqdefault.jpg"
   },
   {
