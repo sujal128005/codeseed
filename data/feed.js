@@ -1,6 +1,6 @@
 /* Filled automatically by .github/workflows/update-feed.yml. Do not edit by hand. */
 window.CODESEED_FEED = {
- "updated": "2026-11-15T16:25:39.080Z",
+ "updated": "2026-11-15T22:55:08.177Z",
  "videos": [
   {
    "id": "0iLeQgV40CA",
@@ -13,7 +13,7 @@ window.CODESEED_FEED = {
    "id": "NpQa3hTYs6A",
    "title": "Vibe Coding Is Fast. Leaked API Keys Are Expensive. | Code Seed",
    "published": "2026-11-01T14:55:43+00:00",
-   "views": 53,
+   "views": 54,
    "thumb": "https://i.ytimg.com/vi/NpQa3hTYs6A/hqdefault.jpg"
   }
  ],
@@ -29,7 +29,7 @@ window.CODESEED_FEED = {
    "id": "ht-p61YuOJo",
    "title": "What is Client? What is Server? Frontend? Backend?  || Code Seed 💻",
    "published": "2026-11-02T23:55:22+00:00",
-   "views": 124,
+   "views": 125,
    "thumb": "https://i.ytimg.com/vi/ht-p61YuOJo/hqdefault.jpg"
   },
   {
