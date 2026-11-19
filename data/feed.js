@@ -1,12 +1,12 @@
 /* Filled automatically by .github/workflows/update-feed.yml. Do not edit by hand. */
 window.CODESEED_FEED = {
- "updated": "2026-11-18T11:52:13.900Z",
+ "updated": "2026-11-19T11:49:09.421Z",
  "videos": [
   {
    "id": "0iLeQgV40CA",
    "title": "Synchronous vs Asynchronous Transmission Explained: Bit Rate, Clock Signal & Framing | Code Seed",
    "published": "2026-11-03T14:15:56+00:00",
-   "views": 27,
+   "views": 28,
    "thumb": "https://i.ytimg.com/vi/0iLeQgV40CA/hqdefault.jpg"
   },
   {
@@ -36,7 +36,7 @@ window.CODESEED_FEED = {
    "id": "Z1EKH6erPB4",
    "title": "Vibe coded in 10 minutes. Then a $1,000 API bill || Code Seed 💻",
    "published": "2026-11-01T14:53:25+00:00",
-   "views": 438,
+   "views": 439,
    "thumb": "https://i.ytimg.com/vi/Z1EKH6erPB4/hqdefault.jpg"
   }
  ],
