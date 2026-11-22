@@ -1,19 +1,19 @@
 /* Filled automatically by .github/workflows/update-feed.yml. Do not edit by hand. */
 window.CODESEED_FEED = {
- "updated": "2026-11-22T01:24:20.120Z",
+ "updated": "2026-11-22T11:36:26.859Z",
  "videos": [
   {
    "id": "0iLeQgV40CA",
    "title": "Synchronous vs Asynchronous Transmission Explained: Bit Rate, Clock Signal & Framing | Code Seed",
    "published": "2026-11-03T14:15:56+00:00",
-   "views": 29,
+   "views": 30,
    "thumb": "https://i.ytimg.com/vi/0iLeQgV40CA/hqdefault.jpg"
   },
   {
    "id": "NpQa3hTYs6A",
    "title": "Vibe Coding Is Fast. Leaked API Keys Are Expensive. | Code Seed",
    "published": "2026-11-01T14:55:43+00:00",
-   "views": 55,
+   "views": 56,
    "thumb": "https://i.ytimg.com/vi/NpQa3hTYs6A/hqdefault.jpg"
   }
  ],
