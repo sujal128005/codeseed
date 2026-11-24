@@ -1,12 +1,12 @@
 /* Filled automatically by .github/workflows/update-feed.yml. Do not edit by hand. */
 window.CODESEED_FEED = {
- "updated": "2026-11-24T02:16:35.657Z",
+ "updated": "2026-11-24T13:52:27.480Z",
  "videos": [
   {
    "id": "0iLeQgV40CA",
    "title": "Synchronous vs Asynchronous Transmission Explained: Bit Rate, Clock Signal & Framing | Code Seed",
    "published": "2026-11-03T14:15:56+00:00",
-   "views": 31,
+   "views": 32,
    "thumb": "https://i.ytimg.com/vi/0iLeQgV40CA/hqdefault.jpg"
   },
   {
