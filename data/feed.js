@@ -1,6 +1,6 @@
 /* Filled automatically by .github/workflows/update-feed.yml. Do not edit by hand. */
 window.CODESEED_FEED = {
- "updated": "2026-11-25T19:23:00.372Z",
+ "updated": "2026-11-26T03:38:01.327Z",
  "videos": [
   {
    "id": "0iLeQgV40CA",
@@ -29,7 +29,7 @@ window.CODESEED_FEED = {
    "id": "ht-p61YuOJo",
    "title": "What is Client? What is Server? Frontend? Backend?  || Code Seed 💻",
    "published": "2026-11-02T23:55:22+00:00",
-   "views": 135,
+   "views": 136,
    "thumb": "https://i.ytimg.com/vi/ht-p61YuOJo/hqdefault.jpg"
   },
   {
