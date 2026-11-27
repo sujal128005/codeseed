@@ -7,7 +7,7 @@ window.TATHVI = {
   channelId: "UCW0oTdAoQXlP4_OLj3aYUMQ",
 
   handle: "tathvi",      // YouTube handle, without @
-  instagram: "tathvi",   // Instagram username, without @
+  instagram: "tathvi_",   // Instagram username, without @
   facebook: "https://www.facebook.com/tathvi.fb",   // Facebook page link (leave "" to hide the Facebook buttons)
 
   // OPTIONAL: Instagram posts on the site.
