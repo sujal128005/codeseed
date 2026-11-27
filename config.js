@@ -8,7 +8,7 @@ window.TATHVI = {
 
   handle: "tathvi",      // YouTube handle, without @
   instagram: "tathvi",   // Instagram username, without @
-  facebook: "https://www.facebook.com/share/1EVCTzLZZX/",   // Facebook page link (leave "" to hide the Facebook buttons)
+  facebook: "https://www.facebook.com/tathvi.fb",   // Facebook page link (leave "" to hide the Facebook buttons)
 
   // OPTIONAL: Instagram posts on the site.
   // Create a free feed at https://behold.so (connect Instagram → JSON feed), paste the feed URL here.
