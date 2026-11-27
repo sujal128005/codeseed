@@ -1,7 +1,7 @@
-/* Code Seed website: renders the auto-updating YouTube + Instagram sections. */
+/* Tathvi website: renders the auto-updating YouTube + Instagram sections. */
 (function () {
   'use strict';
-  const C = window.CODESEED || {};
+  const C = window.TATHVI || {};
   const demo = C.demo === true || location.hash === '#demo';
   const YT = `https://www.youtube.com/@${C.handle || ''}`;
   const SUB = `${YT}?sub_confirmation=1`;
@@ -131,31 +131,11 @@
     const s = F.shorts || [], limit = +box.dataset.limit || 30, sec = box.closest('section');
     if (!s.length) {
       if (sec.dataset.hideEmpty !== undefined) sec.classList.add('hidden');
-      else box.append(empty(ICON_VIDEO, 'Shorts are coming soon.', 'One concept, under a minute. Subscribe to catch the first one.'));
+      else box.append(empty(ICON_VIDEO, 'Shorts are coming soon.', 'One story, under a minute. Subscribe to catch the first one.'));
       return;
     }
     sec.classList.remove('hidden');
     box.append(el('div', { class: box.dataset.layout === 'grid' ? 'sgrid' : 'srow' }, s.slice(0, limit).map(x => vcard(x, 'short'))));
-  }
-  function renderSeries() {
-    const box = $('#series-body'); if (!box) return;
-    const list = C.series || [];
-    if (!list.length) { box.append(empty(ICON_VIDEO, 'The first series is on its way.', 'Subscribe to follow along from episode one.')); return; }
-    box.append(el('div', { class: 'series' }, list.map(s => {
-      const pl = s.playlistId ? `https://www.youtube.com/playlist?list=${s.playlistId}` : YT;
-      return el('article', { class: 'scard2' }, [
-        s.thumbnail ? el('img', { src: s.thumbnail, alt: '', loading: 'lazy', width: 1280, height: 720 }) : null,
-        el('div', { class: 'b' }, [
-          el('div', { class: 'eyebrow', text: `${(s.episodes || []).length} episodes` }),
-          el('h3', { text: s.title }), el('div', { class: 'tg', text: s.tagline || '' }),
-          (s.episodes || []).length ? el('ol', { class: 'eps' }, s.episodes.map((e, i) => el('li', {}, [
-            el('span', { class: 'n', text: String(i + 1).padStart(2, '0') }), el('span', { text: e.title }),
-            e.slides ? el('a', { class: 's', href: e.slides, html: 'Slides <span aria-hidden="true">↓</span>' }) : null,
-          ]))) : null,
-          el('div', { class: 'acts' }, [el('a', { class: 'btn btn-ink btn-sm', href: pl, html: PLAY + 'Watch the series' })]),
-        ]),
-      ]);
-    })));
   }
   function renderInstagram(F) {
     const box = $('#ig-body'); if (!box) return;
@@ -168,9 +148,50 @@
     box.append(el('div', { class: 'ig-follow', style: posts.length ? 'margin-top:28px' : '' }, [
       el('div', { class: 'av', html: document.querySelector('.brand .mark').outerHTML.replace(/width="\d+"/, 'width="34"').replace(/height="\d+"/, 'height="34"') }),
       el('div', { style: 'flex:1;min-width:200px' }, [el('div', { class: 'h', text: '@' + (C.instagram || '') }),
-        el('p', { text: 'Concept explainers, behind the scenes, and what’s coming next.' })]),
+        el('p', { text: 'Quick facts, behind the scenes, and what’s coming next.' })]),
       el('a', { class: 'btn btn-white', href: IG, text: 'Follow on Instagram' }),
     ]));
+  }
+
+  // ---------- corrections (data in corrections.js)
+  const CORR = () => (demo ? (window.TATHVI_DEMO || {}).corrections : window.TATHVI_CORRECTIONS) || [];
+  const secs = t => String(t || '').split(':').reduce((a, n) => a * 60 + (+n || 0), 0);
+  const fmtDate = d => { const x = new Date(d); return isNaN(x) ? '' : x.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }); };
+  function renderCorrections() {
+    const box = $('#corrections-body'); if (!box) return;
+    const list = CORR().filter(c => c && (c.fixes || []).length).sort((a, b) => String(b.date).localeCompare(String(a.date)));
+    if (!list.length) {
+      box.append(el('div', { class: 'empty' }, [
+        el('div', { class: 'ico', html: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>' }),
+        el('div', {}, [el('h3', { text: 'No corrections so far.' }), el('p', { text: 'Every fact is checked before a video goes live. Spotted a mistake? Message us on Instagram and it will be listed here with the timestamp.' })]),
+        el('a', { class: 'btn btn-ink', href: IG, text: 'Report a mistake' }),
+      ]));
+      return;
+    }
+    box.append(el('div', { class: 'corr-list' }, list.map(c => {
+      const url = c.videoId ? `https://www.youtube.com/watch?v=${c.videoId}` : YT;
+      const n = c.fixes.length;
+      return el('article', { class: 'corr', id: c.videoId ? `c-${c.videoId}` : null }, [
+        el('div', { class: 'eyebrow', text: `${n} correction${n === 1 ? '' : 's'}${c.date ? ' · ' + fmtDate(c.date) : ''}` }),
+        el('h3', {}, [el('a', { href: url, 'data-id': demo ? null : c.videoId, 'data-kind': 'video', text: c.title || 'Video' })]),
+        el('ol', { class: 'corr-fixes' }, c.fixes.map(f => el('li', {}, [
+          el('a', { class: 'corr-t', href: c.videoId && !demo ? `${url}&t=${secs(f.time)}s` : url, text: f.time || 'Watch', 'aria-label': `Watch from ${f.time}` }),
+          el('div', { class: 'corr-b' }, [
+            el('div', { class: 'said' }, [el('span', { class: 'k', text: 'We said' }), el('span', { text: f.said || '' })]),
+            el('div', { class: 'fix' }, [el('span', { class: 'k', text: 'Correct' }), el('span', { text: f.correct || '' })]),
+            f.source ? el('a', { class: 'src', href: f.source, rel: 'noopener', target: '_blank', html: 'Source <span aria-hidden="true">↗</span>' }) : null,
+          ]),
+        ]))),
+      ]);
+    })));
+  }
+  function markCorrected() {
+    const ids = new Set(CORR().filter(c => c && c.videoId && (c.fixes || []).length).map(c => c.videoId));
+    if (!ids.size) return;
+    document.querySelectorAll('.vcard, .feature').forEach(card => {
+      const a = card.querySelector('a[data-id]'), m = card.querySelector('.meta');
+      if (a && m && ids.has(a.dataset.id)) m.append(' · ', el('a', { class: 'corr-note', href: `corrections.html#c-${a.dataset.id}`, text: 'Correction' }));
+    });
   }
 
   // ---------- mobile menu
@@ -207,46 +228,24 @@
   document.querySelectorAll('[data-link="youtube"]').forEach(a => a.href = YT);
   document.querySelectorAll('[data-link="subscribe"]').forEach(a => a.href = SUB);
   document.querySelectorAll('[data-link="instagram"]').forEach(a => a.href = IG);
+  document.querySelectorAll('[data-link="facebook"]').forEach(a => { if (C.facebook) a.href = C.facebook; else a.remove(); });
   document.querySelectorAll('[data-text="handle"]').forEach(n => n.textContent = '@' + (C.handle || ''));
   $('#year').textContent = new Date().getFullYear();
 
-  // ---------- hero demo
-  (function journey() {
-    if (!$('#journey')) return;
-    const root = $('#journey'), btn = $('#j-save'), packet = $('#j-packet'), status = $('#j-status');
-    const items = [...root.querySelectorAll('.j-log li')];
-    const pos = { b: '16.6%', s: '50%', d: '83.4%' };
-    const steps = [['b', 's'], ['s', 's'], ['s', 'd'], ['d', 's'], ['s', 'b'], ['b', 'b']];
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const wait = ms => new Promise(r => setTimeout(r, reduce ? 0 : ms));
-    const hot = k => root.querySelectorAll('.j-node').forEach(n => n.classList.toggle('hot', n.dataset.node === k));
-    btn.addEventListener('click', async () => {
-      btn.disabled = true; btn.textContent = 'Saving…'; status.textContent = 'Request in flight';
-      root.classList.add('running'); items.forEach(i => i.classList.remove('on'));
-      packet.style.transition = 'none'; packet.style.left = pos.b; packet.classList.remove('back'); void packet.offsetWidth;
-      packet.style.transition = ''; packet.style.opacity = 1;
-      for (let i = 0; i < steps.length; i++) {
-        const [a, b] = steps[i]; items[i].classList.add('on'); hot(a);
-        packet.classList.toggle('back', (a === 'd' && b === 's') || (a === 's' && b === 'b'));
-        if (a !== b) { packet.style.left = pos[b]; await wait(650); hot(b); }
-        await wait(380);
-      }
-      packet.style.opacity = 0; hot(null); root.classList.remove('running');
-      btn.textContent = 'Saved ✓'; status.textContent = 'Round trip complete';
-      await wait(1800); btn.textContent = 'Save again'; btn.disabled = false;
-    });
-  })();
+  // ---------- front page date line
+  const today = $('#today');
+  if (today) today.textContent = new Date().toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 
   // ---------- go
   (async function init() {
-    let F = demo ? window.CODESEED_DEMO : window.CODESEED_FEED;
+    let F = demo ? window.TATHVI_DEMO : window.TATHVI_FEED;
     const hasYT = F && ((F.videos || []).length || (F.shorts || []).length);
     if (!demo && !hasYT && C.youtubeApiKey) {
       try { F = Object.assign({}, F || {}, await fromApi()); } catch (e) { /* stay with what we have */ }
     }
     F = F || {};
     if (!demo && !(F.instagram || []).length) F.instagram = await instagramClient();
-    renderVideos(F); renderShorts(F); renderSeries(); renderInstagram(F);
+    renderVideos(F); renderShorts(F); renderInstagram(F); renderCorrections(); markCorrected();
     if (F.updated && !demo && $('#updated')) $('#updated').textContent = `Videos updated ${ago(F.updated)}`;
   })();
 })();

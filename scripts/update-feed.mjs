@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const window = {};
 new Function('window', fs.readFileSync(path.join(root, 'config.js'), 'utf8'))(window);
-const C = window.CODESEED || {};
+const C = window.TATHVI || {};
 const MAX = 12;
 
 const decode = s => s.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"')
@@ -34,7 +34,7 @@ export function parseAtom(xml) {
 async function playlistFeed(prefix, channelId) {
   const url = `https://www.youtube.com/feeds/videos.xml?playlist_id=${prefix}${channelId.slice(2)}`;
   try {
-    const r = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (CodeSeed feed bot)' } });
+    const r = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Tathvi feed bot)' } });
     if (!r.ok) { console.log(`  ${prefix}: HTTP ${r.status} (no items yet?)`); return []; }
     return parseAtom(await r.text());
   } catch (e) { console.log(`  ${prefix}: ${e.message}`); return []; }
@@ -69,7 +69,7 @@ async function main() {
   const file = path.join(root, 'data', 'feed.js');
   const prev = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '';
   const strip = s => s.replace(/"updated": "[^"]*",?/, '');
-  const next = `/* Filled automatically by .github/workflows/update-feed.yml. Do not edit by hand. */\nwindow.CODESEED_FEED = ${JSON.stringify(data, null, 1)};\n`;
+  const next = `/* Filled automatically by .github/workflows/update-feed.yml. Do not edit by hand. */\nwindow.TATHVI_FEED = ${JSON.stringify(data, null, 1)};\n`;
   if (strip(prev) !== strip(next)) { fs.writeFileSync(file, next); console.log('data/feed.js updated'); }
   else console.log('no changes');
 }
