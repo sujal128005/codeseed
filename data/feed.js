@@ -1,6 +1,6 @@
 /* Filled automatically by .github/workflows/update-feed.yml. Do not edit by hand. */
 window.CODESEED_FEED = {
- "updated": "2026-11-26T03:38:01.327Z",
+ "updated": "2026-11-27T01:46:53.552Z",
  "videos": [
   {
    "id": "0iLeQgV40CA",
@@ -13,7 +13,7 @@ window.CODESEED_FEED = {
    "id": "NpQa3hTYs6A",
    "title": "Vibe Coding Is Fast. Leaked API Keys Are Expensive. | Code Seed",
    "published": "2026-11-01T14:55:43+00:00",
-   "views": 57,
+   "views": 58,
    "thumb": "https://i.ytimg.com/vi/NpQa3hTYs6A/hqdefault.jpg"
   }
  ],
