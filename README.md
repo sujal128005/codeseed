@@ -54,3 +54,13 @@ To preview the layout with sample content, open `index.html` and add `#demo` to 
 | `data/demo.js` | sample content for `#demo` previews |
 | `scripts/update-feed.mjs`, `.github/workflows/update-feed.yml` | the auto-updater (runs on GitHub) |
 | `assets/` | logo, icons, share image and your photo |
+
+## If new videos stop showing up
+
+YouTube sometimes refuses requests from GitHub's servers. The updater retries, tries a second YouTube feed,
+and never wipes the list when YouTube does not answer. For a 100% reliable feed, add a free YouTube API key:
+
+1. console.cloud.google.com → new project → enable "YouTube Data API v3" → Credentials → Create API key.
+2. GitHub repo → Settings → Secrets and variables → Actions → New repository secret.
+   Name: `YT_API_KEY`, value: the key.
+3. Actions tab → "Update YouTube & Instagram feed" → Run workflow.

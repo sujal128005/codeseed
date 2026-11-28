@@ -2,10 +2,10 @@ name: Update YouTube & Instagram feed
 
 on:
   schedule:
-    - cron: "17 */3 * * *"     # every 3 hours
+    - cron: "17 * * * *"        # every hour
   workflow_dispatch:            # "Run workflow" button in the Actions tab
   push:
-    paths: ["config.js"]        # runs right after you edit your settings
+    paths: ["config.js", "scripts/**", ".github/workflows/**"]   # runs right after an upload
 
 permissions:
   contents: write
@@ -24,6 +24,8 @@ jobs:
           node-version: 20
       - name: Fetch latest videos, Shorts and posts
         run: node scripts/update-feed.mjs
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}   # optional, see README
       - name: Commit if anything changed
         run: |
           git config user.name "tathvi-bot"
